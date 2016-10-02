@@ -1,0 +1,25 @@
+﻿li a {
+    display: block;
+    cursor: pointer;
+}
+
+/*#region multi-view */
+
+.multi-view > * {
+    display: none;
+}
+
+.multi-view > .active {
+    display: block;
+}
+
+/*#endregion */
+
+.navbar {
+    padding: 12px;   
+}
+
+.product-image {
+    float: left;
+    margin-right: 20px;
+}

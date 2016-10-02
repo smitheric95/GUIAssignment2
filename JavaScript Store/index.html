@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Store</title>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="scripts/viewer.js"></script>
+    <script src="scripts/inventory.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/views/homeView.js"></script>
+    <script src="scripts/views/itemView.js"></script>
+    <script src="scripts/views/cartView.js"></script>
+</head>
+<body class="container" onload="store.homeView.load()">
+    <header class="navbar navbar-default">
+        <div class="pull-right">
+            <button onclick="store.cartView.load()"
+                    class="btn btn-sm">
+                Cart: <strong id="cartCount">0</strong>                
+            </button>
+        </div>
+    </header>
+    <main id="storeViews" class="multi-view">
+        <!-- Home View -->
+        <div id="homeView">
+            <h2>Product List</h2>
+            <ul id="homeView_list" class="list-group"></ul>
+        </div>
+        <!-- Item View -->
+        <div id="itemView">
+            <img src="http://placehold.it/300x300" class="product-image" />
+            <h2 id="itemView_Name"></h2>
+            <p id="itemView_Description"></p>
+            <span class="lead" id="itemView_Price"></span>
+            <br />
+            <br />
+            <div class="navigation">
+                <button onclick="store.homeView.load()"
+                        class="btn btn-default">
+                    Return to list
+                </button>
+                <button onclick="store.itemView.addToCart()"
+                        class="btn btn-success">
+                    Add to cart
+                </button>
+            </div>
+        </div>
+        <!-- Cart View -->
+        <div id="cartView">
+            <h2>Cart</h2>
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody id="cartView_list">
+                </tbody>
+            </table>
+            <br />
+            <button onclick="store.homeView.load()"
+                    class="btn btn-default">
+                Return to list
+            </button>
+        </div>
+    </main>
+</body>
+</html>
