@@ -4,9 +4,13 @@
 	height: 100px;
 	margin: 5px;
 	background-color: #bbb;
+	float: left;
+}
 
+.invisiSquare{
+	opacity: 0;
 }
 
 section{
-	width: ;
+	width: 600px;
 }

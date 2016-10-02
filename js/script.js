@@ -1,13 +1,19 @@
 $(document).ready(function(){
+	var sq = $('.square');
+	var sec = $('section');
+
+	for(var i=0;i<29;i++){
+		sec.append( $(sq[0].outerHTML).addClass('invisiSquare') );
+	}
+
 	$('button').click(function(){
-		var $sq = $('.square')[0].outerHTML
-		var $sec = $('section');
+		$('.square').each(function(){
+			$(this).removeClass('invisiSquare');
+		});
 
-		console.log($sq);
-
-		for(var i=0;i<30;i++){
-			$sec.append($sq);
-		}
+		$('.square').click(function(){
+			$(this).addClass('invisiSquare');
+		});
 	});
 });
 
