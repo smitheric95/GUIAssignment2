@@ -2,14 +2,14 @@
 	width: 100px;
 	height: 100px;
 	margin: 5px;
-	background-color: #bbb;
+	background-color: rgb(51, 51, 51);
 	float: left;
 }
 
 .invisiSquare{
-	opacity: 0;
+	display: none;
 }
 
 section{
-	width: 600px;
+	width: 660px;
 }
